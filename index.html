@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AGH Einsatz Manager - Einsätze Erfassen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d6efd">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <!-- XLSX.js für Excel-Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <style>
+        /* ... Ihre bestehenden CSS-Stile ... */
+    </style>
+</head>
+<body>
+    <!-- Navigationsleiste -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">AGH Einsatz Manager</a>
+            <!-- Dark Mode Umschalter -->
+            <div class="form-check form-switch text-white ms-auto">
+                <input class="form-check-input" type="checkbox" id="darkModeSwitch" onchange="toggleDarkMode()">
+                <label class="form-check-label" for="darkModeSwitch">Dark Mode</label>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hauptinhalt -->
+    <div class="container mt-4">
+        <!-- ... Ihr bestehender Inhalt ... -->
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>AGH Einsatz Manager © 2024 | Open Source unter <a href="https://opensource.org/licenses/MIT" target="_blank" style="color: #fff;">MIT-Lizenz</a>.</p>
+    </footer>
+
+    <!-- Bootstrap JS (inkl. Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Haupt-JavaScript -->
+    <script>
+    (function() {
+        // ... Ihr bestehender JavaScript-Code mit zusätzlichen console.logs ...
+
+        // Service Worker Registrierung
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('Service Worker registriert mit Scope:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.error('Service Worker Registrierung fehlgeschlagen:', error);
+                    });
+            });
+        }
+    })();
+    </script>
+</body>
+</html>
